@@ -1,0 +1,96 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportHeight="108"
+    android:viewportWidth="108">
+
+    <!-- Outer gradient ring -->
+    <path
+        android:pathData="M54,20A34,34 0,1,1 53.99,20"
+        android:strokeWidth="3.5"
+        android:fillColor="#00000000">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:type="linear"
+                android:startX="20"
+                android:startY="20"
+                android:endX="88"
+                android:endY="88">
+                <item android:color="#FFFB3595" android:offset="0.0"/>
+                <item android:color="#FF4589F5" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Left waveform bar -->
+    <path
+        android:pathData="M42,46A2,2 0,0,1 46,46L46,62A2,2 0,0,1 42,62Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="42"
+                android:startY="46"
+                android:endX="66"
+                android:endY="46">
+                <item android:color="#FFFB3595" android:offset="0.0"/>
+                <item android:color="#FFA855F7" android:offset="0.5"/>
+                <item android:color="#FF4589F5" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Center waveform bar (tallest) -->
+    <path
+        android:pathData="M50,40A2,2 0,0,1 54,40L54,68A2,2 0,0,1 50,68Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="42"
+                android:startY="40"
+                android:endX="66"
+                android:endY="40">
+                <item android:color="#FFFB3595" android:offset="0.0"/>
+                <item android:color="#FFA855F7" android:offset="0.5"/>
+                <item android:color="#FF4589F5" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Right waveform bar -->
+    <path
+        android:pathData="M58,44A2,2 0,0,1 62,44L62,64A2,2 0,0,1 58,64Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="42"
+                android:startY="44"
+                android:endX="66"
+                android:endY="44">
+                <item android:color="#FFFB3595" android:offset="0.0"/>
+                <item android:color="#FFA855F7" android:offset="0.5"/>
+                <item android:color="#FF4589F5" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Q tail slash -->
+    <path
+        android:pathData="M66,69L76,79"
+        android:fillColor="#00000000"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:type="linear"
+                android:startX="66"
+                android:startY="69"
+                android:endX="76"
+                android:endY="79">
+                <item android:color="#FFFB3595" android:offset="0.0"/>
+                <item android:color="#FF4589F5" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+</vector>

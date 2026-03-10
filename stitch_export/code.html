@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QuantumEAR Settings Clean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4285F4", 
+              "background-light": "#ffffff",
+              "background-dark": "#000000",
+              "surface-dark": "#161618",
+              "surface-light": "#f3f4f6",
+              "accent-pink": "#FB3595",
+              "accent-blue": "#4589F5",
+            },
+            fontFamily: {
+              display: ["Google Sans", "sans-serif"],
+              sans: ["Google Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+            },
+            backgroundImage: {
+              'gradient-brand': 'linear-gradient(to right, #FB3595, #4589F5)',
+              'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+        }
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glassmorphic-row {
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #FB3595, #4589F5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-icon {
+            background: linear-gradient(to bottom right, #FB3595, #4589F5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }.toggle-checkbox:checked {
+            right: 0;
+            border-color: #4589F5;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #4589F5;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white min-h-screen flex flex-col relative overflow-x-hidden">
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-accent-blue rounded-full blur-[100px] opacity-10 dark:opacity-20 mix-blend-screen"></div>
+<div class="absolute bottom-[20%] right-[-10%] w-[250px] h-[250px] bg-accent-pink rounded-full blur-[90px] opacity-10 dark:opacity-15 mix-blend-screen"></div>
+</div>
+<header class="flex justify-between items-center px-6 py-6 z-10 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<h1 class="text-3xl font-bold tracking-tight">Settings</h1>
+<button class="w-10 h-10 rounded-full overflow-hidden border border-gray-200 dark:border-gray-700">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSf9fbds-th3kSzB3zeZT-GOQA-i2WUiYLr0SwtI7CqWRdSFLBucLRMt73qdoms7vbV4ShreJ_AQqHeZ-iBBDfSSvgJ-OwAFSotPd5c6hSVbgvnNUk-t-BeH4KQ2M4DrjSEGhGBe-D1jHhI1YYwxeE6_zbrj47EdlAxTVWVqBBl3kiJsXFPE6mIpnnO7AxX0JomyLjCC0V_oabPa865imVAqic7papuBAyuTi4lMAXACBpdpMZnxzxzHj08vr5W91AlZX_icMdeTc"/>
+</button>
+</header>
+<main class="flex-1 px-6 pb-28 z-10 flex flex-col gap-8 mt-2">
+<section>
+<h2 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider ml-1">Account</h2>
+<div class="glassmorphic rounded-2xl overflow-hidden">
+<div class="glassmorphic-row p-4 flex items-center justify-between hover:bg-white/5 transition cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-surface-dark dark:to-black flex items-center justify-center border border-gray-200 dark:border-gray-800">
+<span class="material-symbols-outlined gradient-icon">person</span>
+</div>
+<div>
+<p class="font-medium text-base">Profile Information</p>
+<p class="text-xs text-gray-500">Name, Email, Phone</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-white/5 transition cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-surface-dark dark:to-black flex items-center justify-center border border-gray-200 dark:border-gray-800">
+<span class="material-symbols-outlined gradient-icon">notifications</span>
+</div>
+<div>
+<p class="font-medium text-base">Notifications</p>
+<p class="text-xs text-gray-500">Alerts, Sounds</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider ml-1">Quantum Engine</h2>
+<div class="glassmorphic rounded-2xl overflow-hidden">
+<div class="glassmorphic-row p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-surface-dark dark:to-black flex items-center justify-center border border-gray-200 dark:border-gray-800">
+<span class="material-symbols-outlined gradient-icon">graphic_eq</span>
+</div>
+<div>
+<p class="font-medium text-base">High-Fidelity Analysis</p>
+<p class="text-xs text-gray-500">Uses more battery power</p>
+</div>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-accent-blue transition-all duration-300" id="toggle1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer checked:bg-accent-blue transition-colors duration-300" for="toggle1"></label>
+</div>
+</div>
+<div class="glassmorphic-row p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-surface-dark dark:to-black flex items-center justify-center border border-gray-200 dark:border-gray-800">
+<span class="material-symbols-outlined gradient-icon">mic_noise_cancel_off</span>
+</div>
+<div>
+<p class="font-medium text-base">Active Noise Filter</p>
+<p class="text-xs text-gray-500">Suppress background static</p>
+</div>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-accent-blue transition-all duration-300" id="toggle2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-accent-blue cursor-pointer transition-colors duration-300" for="toggle2"></label>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-white/5 transition cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-surface-dark dark:to-black flex items-center justify-center border border-gray-200 dark:border-gray-800">
+<span class="material-symbols-outlined gradient-icon">memory</span>
+</div>
+<div>
+<p class="font-medium text-base">Model Version</p>
+<p class="text-xs text-gray-500">Quantum v2.4 (Stable)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider ml-1">Privacy &amp; Security</h2>
+<div class="glassmorphic rounded-2xl overflow-hidden">
+<div class="glassmorphic-row p-4 flex items-center justify-between hover:bg-white/5 transition cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-surface-dark dark:to-black flex items-center justify-center border border-gray-200 dark:border-gray-800">
+<span class="material-symbols-outlined gradient-icon">lock</span>
+</div>
+<div>
+<p class="font-medium text-base">Data Retention</p>
+<p class="text-xs text-gray-500">Manage saved audio logs</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-white/5 transition cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-surface-dark dark:to-black flex items-center justify-center border border-gray-200 dark:border-gray-800">
+<span class="material-symbols-outlined gradient-icon">visibility_off</span>
+</div>
+<div>
+<p class="font-medium text-base">Incognito Analysis</p>
+<p class="text-xs text-gray-500">Do not save history</p>
+</div>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-accent-blue transition-all duration-300" id="toggle3" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer checked:bg-accent-blue transition-colors duration-300" for="toggle3"></label>
+</div>
+</div>
+</div>
+</section>
+<div class="mt-4 text-center">
+<p class="text-xs text-gray-500">QuantumEAR v2.4.1 (Build 8902)</p>
+<p class="text-[10px] text-gray-600 dark:text-gray-600 mt-1">© 2026 Quantum Technologies</p>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full bg-white/80 dark:bg-[#000000]/80 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 pb-safe z-50">
+<div class="flex justify-around items-center h-16 px-2">
+<button class="flex flex-col items-center justify-center w-16 h-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+<span class="material-icons-outlined text-2xl">home</span>
+<span class="text-[10px] font-medium mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+<span class="material-icons-outlined text-2xl">history</span>
+<span class="text-[10px] font-medium mt-1">History</span>
+</button>
+<button class="relative -top-5 w-14 h-14 rounded-full bg-surface-dark dark:bg-surface-light/10 border border-gray-200 dark:border-gray-700 flex items-center justify-center shadow-lg transition transform hover:scale-105">
+<span class="material-icons-outlined text-gray-600 dark:text-gray-300 text-2xl">mic</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+<span class="material-icons-outlined text-2xl">analytics</span>
+<span class="text-[10px] font-medium mt-1">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full text-accent-pink">
+<span class="material-icons-outlined text-2xl">settings</span>
+<span class="text-[10px] font-medium mt-1">Settings</span>
+</button>
+</div>
+<div class="h-5"></div>
+</nav>
+<script>
+        // Simple dark mode toggle for demonstration purposes if needed, 
+        // though typically handled by system preference or user setting.
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>

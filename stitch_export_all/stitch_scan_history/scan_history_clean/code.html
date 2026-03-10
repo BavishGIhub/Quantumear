@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scan History Pro-Free</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4285F4", 
+              "background-light": "#ffffff",
+              "background-dark": "#000000",
+              "surface-dark": "#161618",
+              "surface-light": "#f3f4f6",
+              "accent-pink": "#FB3595",
+              "accent-blue": "#4589F5",
+            },
+            fontFamily: {
+              display: ["Google Sans", "sans-serif"],
+              sans: ["Google Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+            },
+            backgroundImage: {
+              'gradient-brand': 'linear-gradient(to right, #FB3595, #4589F5)',
+              'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+        }
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #FB3595, #4589F5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gauge-arc {
+            stroke-dasharray: 251;stroke-dashoffset: 251;
+            transition: stroke-dashoffset 1s ease-out;
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white min-h-screen flex flex-col relative overflow-x-hidden">
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute top-[-10%] right-[-20%] w-[300px] h-[300px] bg-accent-blue rounded-full blur-[100px] opacity-20 dark:opacity-30 mix-blend-screen"></div>
+<div class="absolute top-[20%] left-[-20%] w-[250px] h-[250px] bg-accent-pink rounded-full blur-[90px] opacity-20 dark:opacity-25 mix-blend-screen"></div>
+<div class="absolute bottom-[10%] right-[10%] w-[200px] h-[200px] bg-purple-500 rounded-full blur-[80px] opacity-10 dark:opacity-20 mix-blend-screen"></div>
+</div>
+<header class="flex justify-between items-center px-6 py-4 z-10 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<h1 class="text-2xl font-bold">Scan <span class="gradient-text">History</span></h1>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition">
+<span class="material-icons-outlined text-gray-800 dark:text-gray-200">filter_list</span>
+</button>
+<button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition flex items-center justify-center border border-gray-200 dark:border-gray-700" id="theme-toggle">
+<span class="material-icons-outlined text-gray-800 dark:text-gray-200 hidden dark:block">light_mode</span>
+<span class="material-icons-outlined text-gray-800 dark:text-gray-200 block dark:hidden">dark_mode</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-6 pb-28 z-10 flex flex-col gap-6 pt-2">
+<div class="relative">
+<span class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-icons-outlined text-gray-500">search</span>
+</span>
+<input class="w-full py-3.5 pl-12 pr-4 rounded-2xl bg-surface-light dark:bg-surface-dark border-none focus:ring-2 focus:ring-accent-pink text-sm text-gray-900 dark:text-white placeholder-gray-500 shadow-inner" placeholder="Search audio scans..." type="text"/>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
+<button class="px-5 py-2 rounded-full bg-gradient-brand text-white text-sm font-medium whitespace-nowrap shadow-lg shadow-accent-pink/20">All Time</button>
+<button class="px-5 py-2 rounded-full glassmorphic text-gray-600 dark:text-gray-300 text-sm font-medium whitespace-nowrap hover:bg-white/10 transition">This Week</button>
+<button class="px-5 py-2 rounded-full glassmorphic text-gray-600 dark:text-gray-300 text-sm font-medium whitespace-nowrap hover:bg-white/10 transition">Last Month</button>
+<button class="px-5 py-2 rounded-full glassmorphic text-gray-600 dark:text-gray-300 text-sm font-medium whitespace-nowrap hover:bg-white/10 transition">Deepfakes Only</button>
+</div>
+<div class="space-y-4">
+<div class="glassmorphic rounded-2xl p-4 flex flex-col gap-3 group hover:bg-white/5 transition duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-light dark:bg-white/10 flex items-center justify-center text-accent-pink">
+<span class="material-symbols-outlined text-2xl">graphic_eq</span>
+</div>
+<div>
+<h3 class="font-bold text-base text-gray-900 dark:text-white">Political_Speech_v4.mp3</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Today, 10:42 AM • 4.2 MB</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-md mb-1">Deepfake Detected</span>
+<span class="text-[10px] text-gray-500">Confidence: 99.2%</span>
+</div>
+</div>
+<div class="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mt-1">
+<div class="h-full w-[92%] bg-gradient-to-r from-red-500 to-pink-600 rounded-full"></div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-gray-200/10 dark:border-white/5 mt-1">
+<div class="flex gap-3">
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">play_arrow</span></button>
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">share</span></button>
+</div>
+<button class="text-xs text-accent-blue font-medium hover:text-accent-pink transition">View Report</button>
+</div>
+</div>
+<div class="glassmorphic rounded-2xl p-4 flex flex-col gap-3 group hover:bg-white/5 transition duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-light dark:bg-white/10 flex items-center justify-center text-accent-blue">
+<span class="material-symbols-outlined text-2xl">mic</span>
+</div>
+<div>
+<h3 class="font-bold text-base text-gray-900 dark:text-white">Client_Call_Rec_02</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Yesterday, 4:15 PM • 12 mins</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-green-500 bg-green-500/10 px-2 py-1 rounded-md mb-1">Authentic Audio</span>
+<span class="text-[10px] text-gray-500">Confidence: 98.5%</span>
+</div>
+</div>
+<div class="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mt-1">
+<div class="h-full w-[8%] bg-green-500 rounded-full"></div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-gray-200/10 dark:border-white/5 mt-1">
+<div class="flex gap-3">
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">play_arrow</span></button>
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">share</span></button>
+</div>
+<button class="text-xs text-accent-blue font-medium hover:text-accent-pink transition">View Report</button>
+</div>
+</div>
+<div class="glassmorphic rounded-2xl p-4 flex flex-col gap-3 group hover:bg-white/5 transition duration-300">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-light dark:bg-white/10 flex items-center justify-center text-purple-400">
+<span class="material-symbols-outlined text-2xl">attach_file</span>
+</div>
+<div>
+<h3 class="font-bold text-base text-gray-900 dark:text-white">Unknown_Source.wav</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Oct 24, 9:00 AM • 1.5 MB</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-orange-400 bg-orange-400/10 px-2 py-1 rounded-md mb-1">Suspicious</span>
+<span class="text-[10px] text-gray-500">Confidence: 65%</span>
+</div>
+</div>
+<div class="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mt-1">
+<div class="h-full w-[65%] bg-orange-400 rounded-full"></div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-gray-200/10 dark:border-white/5 mt-1">
+<div class="flex gap-3">
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">play_arrow</span></button>
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">share</span></button>
+</div>
+<button class="text-xs text-accent-blue font-medium hover:text-accent-pink transition">View Report</button>
+</div>
+</div>
+<div class="glassmorphic rounded-2xl p-4 flex flex-col gap-3 group hover:bg-white/5 transition duration-300 opacity-60">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-light dark:bg-white/10 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined text-2xl">voicemail</span>
+</div>
+<div>
+<h3 class="font-bold text-base text-gray-900 dark:text-white">Voicemail_Mom.mp3</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Oct 20, 11:30 AM • 45s</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-green-500 bg-green-500/10 px-2 py-1 rounded-md mb-1">Authentic Audio</span>
+<span class="text-[10px] text-gray-500">Confidence: 99.9%</span>
+</div>
+</div>
+<div class="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mt-1">
+<div class="h-full w-[2%] bg-green-500 rounded-full"></div>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-gray-200/10 dark:border-white/5 mt-1">
+<div class="flex gap-3">
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">play_arrow</span></button>
+<button class="text-gray-500 hover:text-white transition"><span class="material-symbols-outlined text-lg">share</span></button>
+</div>
+<button class="text-xs text-accent-blue font-medium hover:text-accent-pink transition">View Report</button>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full bg-white/80 dark:bg-[#000000]/80 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 pb-safe z-50">
+<div class="flex justify-around items-center h-16 px-2">
+<button class="flex flex-col items-center justify-center w-16 h-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition group">
+<span class="material-icons-outlined text-2xl group-hover:text-accent-blue transition-colors">home</span>
+<span class="text-[10px] font-medium mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full text-accent-pink">
+<span class="material-icons-outlined text-2xl">history</span>
+<span class="text-[10px] font-medium mt-1">History</span>
+</button>
+
+<button class="flex flex-col items-center justify-center w-16 h-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition group">
+<span class="material-icons-outlined text-2xl group-hover:text-accent-blue transition-colors">analytics</span>
+<span class="text-[10px] font-medium mt-1">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 h-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition group">
+<span class="material-icons-outlined text-2xl group-hover:text-accent-blue transition-colors">settings</span>
+<span class="text-[10px] font-medium mt-1">Settings</span>
+</button>
+</div>
+<div class="h-5"></div>
+</nav>
+<script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+        });
+    </script>
+</body></html>

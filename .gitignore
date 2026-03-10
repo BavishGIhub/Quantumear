@@ -1,0 +1,34 @@
+# Dependencies
+app/node_modules/
+node_modules/
+
+# Python Build and Env
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.env.local
+venv/
+env/
+ENV/
+
+# PyTorch Checkpoints and Datasets
+checkpoints/
+datasets/
+*.pt
+*.pth
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.aac
+*.m4a
+
+# Next.js Build
+app/.next/
+app/out/
+
+# OS Files
+.DS_Store
+Thumbs.db

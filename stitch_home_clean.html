@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QuantumEAR Home Optimized</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4285F4", 
+              "background-light": "#ffffff",
+              "background-dark": "#000000",
+              "surface-dark": "#161618",
+              "surface-light": "#f3f4f6",
+              "accent-pink": "#FB3595",
+              "accent-blue": "#4589F5",
+            },
+            fontFamily: {
+              display: ["Google Sans", "sans-serif"],
+              sans: ["Google Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+            },
+            backgroundImage: {
+              'gradient-brand': 'linear-gradient(to right, #FB3595, #4589F5)',
+              'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+        }
+        .glassmorphic {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #FB3595, #4589F5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border-mask {
+            position: relative;
+            background: #000;
+            border-radius: 9999px;
+        }
+        .gradient-border-mask::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px; 
+            padding: 2px; 
+            background: linear-gradient(to right, #FB3595, #4589F5); 
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+            pointer-events: none;
+        }.gauge-arc {
+            stroke-dasharray: 251;stroke-dashoffset: 251;
+            transition: stroke-dashoffset 1s ease-out;
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white min-h-screen flex flex-col relative overflow-x-hidden">
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute top-[-10%] right-[-20%] w-[300px] h-[300px] bg-accent-blue rounded-full blur-[100px] opacity-20 dark:opacity-30 mix-blend-screen"></div>
+<div class="absolute top-[20%] left-[-20%] w-[250px] h-[250px] bg-accent-pink rounded-full blur-[90px] opacity-20 dark:opacity-25 mix-blend-screen"></div>
+<div class="absolute bottom-[10%] right-[10%] w-[200px] h-[200px] bg-purple-500 rounded-full blur-[80px] opacity-10 dark:opacity-20 mix-blend-screen"></div>
+</div>
+<header class="flex justify-between items-center px-6 py-4 z-10">
+<button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition">
+<span class="material-icons-outlined text-gray-800 dark:text-gray-200">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-gradient-brand flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-[2px] bg-background-light dark:bg-background-dark rounded-[2px] flex items-center justify-center">
+<span class="font-bold text-lg gradient-text">Q</span>
+</div>
+</div>
+<span class="font-bold text-lg tracking-tight">QuantumEAR</span>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark transition-colors duration-200" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined text-gray-800 dark:hidden">dark_mode</span>
+<span class="material-icons-outlined text-yellow-400 hidden dark:block">light_mode</span>
+</button>
+</header>
+<main class="flex-1 px-6 pb-24 z-10 flex flex-col gap-8">
+<div class="mt-4 text-center space-y-2">
+<p class="text-sm font-medium text-accent-pink tracking-wide uppercase">Quantum Enhanced</p>
+<h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                Where audio clarity <br/>
+<span class="gradient-text">meets intelligence</span>
+</h1>
+<p class="text-gray-600 dark:text-gray-400 text-sm max-w-xs mx-auto pt-2">
+                Advanced noise cancellation and deepfake detection powered by next-gen quantum algorithms.
+            </p>
+</div>
+<div class="relative group mt-6">
+<div class="absolute -inset-0.5 bg-gradient-brand rounded-3xl opacity-30 group-hover:opacity-60 transition duration-500 blur"></div>
+<div class="relative glassmorphic rounded-3xl p-12 flex flex-col items-center justify-center text-center space-y-6 cursor-pointer hover:bg-white/5 transition duration-300">
+<div class="w-24 h-24 rounded-full bg-gradient-brand p-[3px] shadow-[0_0_30px_rgba(251,53,149,0.3)]">
+<div class="w-full h-full bg-background-light dark:bg-surface-dark rounded-full flex items-center justify-center">
+<span class="material-icons-outlined text-5xl text-accent-blue">graphic_eq</span>
+</div>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-2">Analyze Audio</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Tap to record or upload file</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glassmorphic rounded-2xl p-4 flex flex-col items-center justify-between min-h-[160px]">
+<h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Trust Check</h4>
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-gray-200 dark:text-gray-700 opacity-20" cx="50%" cy="50%" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle cx="50%" cy="50%" fill="transparent" r="40" stroke="url(#gradient)" stroke-dasharray="251" stroke-dashoffset="60" stroke-linecap="round" stroke-width="8"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#FB3595"></stop>
+<stop offset="100%" stop-color="#4589F5"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold">98%</span>
+<span class="text-[10px] text-gray-500 uppercase">Real</span>
+</div>
+</div>
+</div>
+<div class="glassmorphic rounded-2xl p-4 flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Recent</h4>
+<button class="text-xs text-accent-blue hover:text-accent-pink transition">View all</button>
+</div>
+<div class="space-y-3 flex-1">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-light dark:bg-white/10 flex items-center justify-center text-xs">
+<span class="material-icons-outlined text-sm">mic</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">Interview_v2.mp3</p>
+<p class="text-[10px] text-green-500">Authentic</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-light dark:bg-white/10 flex items-center justify-center text-xs">
+<span class="material-icons-outlined text-sm">attach_file</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">Voicemail.wav</p>
+<p class="text-[10px] text-red-500">Deepfake Detected</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full bg-white/80 dark:bg-[#000000]/80 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 pb-safe z-50">
+<div class="flex justify-around items-center h-16 px-4">
+<button class="flex flex-col items-center justify-center flex-1 text-accent-pink">
+<span class="material-icons-outlined text-2xl">home</span>
+<span class="text-[10px] font-medium mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center flex-1 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+<span class="material-icons-outlined text-2xl">history</span>
+<span class="text-[10px] font-medium mt-1">History</span>
+</button>
+<button class="flex flex-col items-center justify-center flex-1 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+<span class="material-icons-outlined text-2xl">analytics</span>
+<span class="text-[10px] font-medium mt-1">Stats</span>
+</button>
+<button class="flex flex-col items-center justify-center flex-1 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+<span class="material-icons-outlined text-2xl">settings</span>
+<span class="text-[10px] font-medium mt-1">Settings</span>
+</button>
+</div>
+<div class="h-5"></div>
+</nav>
+<script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body></html>
